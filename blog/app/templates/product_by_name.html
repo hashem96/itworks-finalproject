@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block main %}
+
+    <h1 id ="product_name" style="margin: 10px 0 10px 0;display: flex; justify-content: center;">{{ product_name }} </h1>
+    <div style="margin: 10px 0 10px 0;display: flex; justify-content: center;">
+        <img id ="productImg" src={{product_image}}></img>
+    </div>
+    <p id ="product_price" style="margin: 10px 0 10px 0;display: flex; justify-content: center;"> {{ product_price }} $ </p>
+    <p style="margin: 10px 0 10px 0;display: flex; justify-content: center;" > Category : {{ product_category.capitalize() }}</p>
+
+    <div class="quantityFields">
+        <p id ="quantityLabel" >Quantity : <input id ="quantityInput" type="text" name="quantity" value = 1 >
+         </p>
+        
+    </div>
+
+    <div class="buttonsContainer">
+        <button id="addToCartButton" >Add to cart</button>
+        <button> <a id="checkoutTag" href="/checkout">Proceed to checkout </a> </button>
+    </div> 
+
+
+{% endblock %}
+
+
+
+

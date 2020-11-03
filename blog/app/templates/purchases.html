@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="container">
+  <ul id = "tableRow" class="table-row">
+  {%if checkoutProducts %}
+  {% for product in checkoutProducts %}
+    <p class="col col-1" >{{product.product_name}} ---  {{product.product_price_per_quantity}} $ </p>
+  {% endfor %}
+  <p class="col col-1">{{purchase_date}} </p>
+  </ul>
+</div>
+  {%else%}
+    <p>No purchases has been found</p>
+  {%endif%}
+
+
+{% endblock %}
+
+
+
+

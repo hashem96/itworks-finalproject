@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="main-product">
+   <div class="container">
+         <div class="row clearfix">
+               <div class="find-box">
+                     <h1>Find your next product<br></h1>
+                     <h4>Everything you need in one place.</h4>
+                     {% if current_user.is_authenticated %}
+                     <div class="product-sh">
+                           <form class="form-sh" method="post">
+
+                              {{ select_form.hidden_tag() }}
+
+                              {{select_form.categories(class="selectpicker")}}
+
+                              {{ select_form.submit(class="btn btn-lg btn-success btn-block categorySearchBtn") }}
+
+                           </form> 
+                     </div>
+                     {%endif%}
+
+                  </div>
+               </div>
+            </div>
+         <div>
+            
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<div class="container">
+    <div class="responsive-table">
+      <ul class="table-header">
+        <p class="col col-1">Product</p>
+        <p class="col col-2">Price Per Unit</p>
+        <p class="col col-3">Quantity</p>
+        <p class="col col-4">Price</p>
+      </ul>
+      {% for product in checkoutProducts %}
+      <ul id = "tableRow" class="table-row">
+        <p class="col col-1" >{{product.product_name}}</p>
+        <p class="col col-2">{{product.product_price}} </p>
+        <p class="col col-3" >{{product.product_quantity}}</p>
+        <p class="col col-4" id ="productPrice" name="productPrice"> {{product.product_price_per_quantity}} </p>
+      </ul>
+      {% endfor %}
+    </div>
+    <div class="totalSum">
+    <p></p>
+    <h3 id="total"></h3>
+  </div>
+  <div class="confirmButtonContainer"> 
+    <button  id="confirmButton">Confirm Order</button>
+    </div>
+  </div>
+
+
+
+
+
+{% endblock %}
+
